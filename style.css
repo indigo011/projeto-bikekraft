@@ -1,0 +1,144 @@
+:root {
+    /* Cores */
+    --cinza: #f7f7f7;
+    --cinza-escuro: #c6c6c6;
+    --vermelho: #ee2211;
+
+    /* Tipografia */
+    --fonte: Arial, Helvetica, sans-serif;
+    --paragrafos: 20px;
+    --vantagens-font: 64px;
+
+    /* Tamanhos */
+    --conteudo-principal: 1000px;
+}
+
+
+* {
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte);
+    background-color: var(--cinza);
+    display: grid;
+    gap: 60px;
+    padding-top: 60px;
+    justify-items: center;
+}
+
+
+.info {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+a {
+    padding: 15px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    background-color: white;
+    color: #111;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.main-container {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+
+.call-action-card {
+    text-align: end;
+    background-color: white ;
+}
+
+.call-action-card a {
+    background-color: var(--vermelho);
+    color: white;
+    align-self: end;
+    display: inline-block;
+    margin-top: 16px;
+}
+
+.bikekraft-card {
+    position: relative;
+}
+
+.guidao {
+    width: 60px;
+    height: 4px;
+    background-color: var(--vermelho);
+    position: absolute;
+    top: 16px;
+    left: 0;
+    translate: -50% 0;
+    overflow-x: auto;
+}
+
+.bikekraft-img {
+    max-width: 100%;
+    min-width: 343px;
+    display: block;
+}
+
+.vantagens {
+    font-size: 64px;
+    color: var(--cinza-escuro);
+    text-align: end;
+    text-transform: uppercase;
+}
+
+.vantagens h2 {
+    width: fit-content;
+}
+
+.features {
+    background-color: white;
+    padding: 40px;
+    gap: 40px;
+}
+
+.features-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5px 20px;
+}
+
+.features-item p {
+    grid-column: 2;
+}
+
+.icon {
+    /* position: relative;
+    left: -35px;
+    top: 27px;   */
+}
+
+p {
+    font-size: var(--paragrafos);
+}
+
+footer {
+    padding: 60px;
+    background-color: white;
+    text-align: center;
+    justify-self: stretch;
+}
+

@@ -2,7 +2,7 @@
     TODO
     - [x] Adicionar tags semânticas
     - [x] Modificar as unidades
-    - [] Modificar o background do subtítulo vantagens
+    - [x] Modificar o background do subtítulo vantagens
     - [] Mudar os estados de alguns elementos:
         - borda vermelha nos botões
         - vermelho escuro no hover do botão (#900)
@@ -63,6 +63,10 @@ a {
     font-weight: 400;
 }
 
+a:hover:not(.info a) {
+    outline: 2px solid var(--vermelho);
+}
+
 .menu {
     display: flex;
     gap: 1.25rem;
@@ -88,9 +92,13 @@ main {
     padding: 2.5rem;
 }
 
+main .card:first-child, main .card:last-child {
+    background-color: white;
+}
+
 .info {
     text-align: end;
-    background-color: white ;
+    position: relative;
 }
 
 .info a {
@@ -99,6 +107,21 @@ main {
     align-self: end;
     display: inline-block;
     margin-top: 16px;
+}
+
+.info a:hover {
+    background-color: var(--vermelho-escuro);
+}
+
+.info::before {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 60px;
+    background-color: var(--vermelho);
+    position: absolute;
+    top: 16px;
+    right: -30px;
 }
 
 .bike-card {
@@ -132,14 +155,19 @@ main {
     padding: 2.5rem;
 }
 
-.caracteristicas {
-    background-color: white;
-}
-
 .caracteristicas-item {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 5px 20px;
+    padding: 20px;
+}
+
+.caracteristicas-item:hover {
+    border-left: 4px solid var(--vermelho);
+}
+
+.caracteristicas-item:nth-child(odd) {
+    background-color: var(--cinza);
 }
 
 .caracteristicas-item p {

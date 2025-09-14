@@ -1,13 +1,28 @@
+/* 
+    TODO
+    - [] Adicionar tags semânticas
+    - [] Modificar as unidades
+    - [] Modificar o background do subtítulo vantagens
+    - [] Mudar os estados de alguns elementos:
+        - borda vermelha nos botões
+        - vermelho escuro no hover do botão (#900)
+        - bordar esquerda vermelha nas vantagens e pintar os itens impares
+
+*/
+
+/* Gerais */
+
 :root {
     /* Cores */
     --cinza: #f7f7f7;
     --cinza-escuro: #c6c6c6;
     --vermelho: #ee2211;
+    --vermelho-escuro: #900;
 
     /* Tipografia */
     --fonte: Arial, Helvetica, sans-serif;
-    --paragrafos: 20px;
-    --vantagens-font: 64px;
+    --paragrafos: 1.25rem;
+    --vantagens-font: 4rem;
 
     /* Tamanhos */
     --conteudo-principal: 1000px;
@@ -24,22 +39,22 @@ body {
     font-family: var(--fonte);
     background-color: var(--cinza);
     display: grid;
-    gap: 60px;
-    padding-top: 60px;
+    gap: 3.75rem;
+    padding-top: 3.75rem;
     justify-items: center;
 }
 
+/* Header */
 
-.info {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-
+header {
+    display: grid;
+    justify-self: stretch;
+    gap: 1.25rem;
+    justify-items: center;
 }
 
 a {
-    padding: 15px 30px;
+    padding: 0.9rem 1.8rem;
     border-radius: 4px;
     text-decoration: none;
     background-color: white;
@@ -48,28 +63,37 @@ a {
     font-weight: 400;
 }
 
-.main-container {
-    max-width: 1000px;
+.menu {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+/* Main */
+
+main {
+    max-width: var(--conteudo-principal);
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-.grid-item {
+.card:not(.bike-card) {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
-    padding: 40px;
+    gap: 1.25rem;
+    padding: 2.5rem;
 }
 
-
-.call-action-card {
+.info {
     text-align: end;
     background-color: white ;
 }
 
-.call-action-card a {
+.info a {
     background-color: var(--vermelho);
     color: white;
     align-self: end;
@@ -77,11 +101,17 @@ a {
     margin-top: 16px;
 }
 
-.bikekraft-card {
-    position: relative;
+.bike-card {
+    border: 2px solid;
 }
 
-.guidao {
+.bike-card img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* .guidao {
     width: 60px;
     height: 4px;
     background-color: var(--vermelho);
@@ -90,50 +120,35 @@ a {
     left: 0;
     translate: -50% 0;
     overflow-x: auto;
-}
+} */
 
-.bikekraft-img {
-    max-width: 100%;
-    min-width: 343px;
-    display: block;
-}
-
-.vantagens {
-    font-size: 64px;
+.vantagens h2 {
+    width: fit-content;
+    font-size: var(--vantagens-font);
     color: var(--cinza-escuro);
     text-align: end;
     text-transform: uppercase;
 }
 
-.vantagens h2 {
-    width: fit-content;
-}
-
-.features {
+.caracteristicas {
     background-color: white;
-    padding: 40px;
-    gap: 40px;
 }
 
-.features-item {
+.caracteristicas-item {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 5px 20px;
 }
 
-.features-item p {
+.caracteristicas-item p {
     grid-column: 2;
-}
-
-.icon {
-    /* position: relative;
-    left: -35px;
-    top: 27px;   */
 }
 
 p {
     font-size: var(--paragrafos);
 }
+
+/* Footer */
 
 footer {
     padding: 60px;
